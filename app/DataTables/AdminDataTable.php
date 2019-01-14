@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\User;
+use App\Admin;
 use Yajra\DataTables\Services\DataTable;
 
 class AdminDataTable extends DataTable
@@ -22,12 +22,12 @@ class AdminDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param \App\Admin $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model)
+    public function query()
     {
-        return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
+        return Admin::query();
     }
 
     /**
