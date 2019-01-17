@@ -252,6 +252,9 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url('design/adminlte/dist/js/demo.js') }}"></script>
 
+
+<script src="{{ url('design/adminlte/dist/js/my_function.js') }}"></script>
+
 @stack('js')
 @stack('css')
 

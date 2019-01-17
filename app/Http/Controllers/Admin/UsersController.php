@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\DataTables\AdminDataTable;
-use App\Admin;
+use App\DataTables\UserDataTable;
+use App\User;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(AdminDataTable $admin)
+    public function index(UserDataTable $admin)
     {
-        return $admin->render('admin.admins.index', ['title' => trans('admin.adminpanel')]);
+        return $admin->render('admin.users.index', ['title' => trans('admin.users')]);
     }
 
     /**
@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.admins.create', ['title' => trans('admin.newadmin')]);
+        return view('admin.users.create', ['title' => trans('admin.newuser')]);
     }
 
     /**
@@ -39,19 +39,21 @@ class AdminController extends Controller
         $data = $this->validate(request(),
         [
             'name'      =>    'required',
-            'email'     =>    'required|email|unique:admins',
+            'level'     =>    'required|in:user,company,vendor',
+            'email'     =>    'required|email|unique:users',
             'password'  =>    'required|min:6',
         ], [],
         [
             'name'      =>    trans('admin.name'),
+            'level'     =>    trans('admin.level'),
             'email'     =>    trans('admin.email'),
             'password'  =>    trans('admin.password'),
         ]);
 
         $data['passord'] = bcrypt(request('password'));
-        Admin::create($data);
+        User::create($data);
         session()->flash('success', trans('admin.record_added'));
-        return redirect(aurl('admin'));
+        return redirect(aurl('users'));
     }
 
     /**
@@ -73,9 +75,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        $admin = Admin::find($id);
+        $user = User::find($id);
         $title = trans('admin.edit');
-        return view('admin.admins.edit', compact('admin', 'title'));
+        return view('admin.users.edit', compact('user', 'title'));
 
     }
 
@@ -91,11 +93,13 @@ class AdminController extends Controller
         $data = $this->validate(request(),
         [
             'name'      =>    'required',
-            'email'     =>    'required|email|unique:admins,email,' . $id,
+            'level'     =>    'required',
+            'email'     =>    'required|email|unique:users,email,' . $id,
             'password'  =>    'sometimes|nullable|min:6',
         ], [],
         [
             'name'      =>    trans('admin.name'),
+            'level'     =>    trans('admin.level'),
             'email'     =>    trans('admin.email'),
             'password'  =>    trans('admin.password'),
         ]);
@@ -103,9 +107,9 @@ class AdminController extends Controller
 
             $data['password'] = bcrypt(request('password'));
         }
-        Admin::where('id', $id)->update($data);
+        User::where('id', $id)->update($data);
         session()->flash('success', trans('admin.record_updated'));
-        return redirect(aurl('admin'));
+        return redirect(aurl('users'));
     }
 
     /**
@@ -116,19 +120,19 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        Admin::find($id)->delete();
+        User::find($id)->delete();
         session()->flash('success', trans('admin.record_deleted'));
-        return redirect(aurl('admin'));    }
+        return redirect(aurl('users'));    }
 
     public function multi_delete()
     {
         if(is_array(request('item')))
         {
-            Admin::destroy(request('item'));
+            User::destroy(request('item'));
         }else{
-            Admin::find(request('item'))->delete();
+            User::find(request('item'))->delete();
         }
         session()->flash('success', trans('admin.record_deleted'));
-        return redirect(aurl('admin'));
+        return redirect(aurl('users'));
     }
 }

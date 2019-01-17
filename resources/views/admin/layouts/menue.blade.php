@@ -197,11 +197,41 @@
               </li>
             </ul>
           </li>
+
+
+
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-globe"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li >
+                    <a href="{{ aurl('lang/ar') }}" >
+                    عربي
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ aurl('lang/en') }}" >
+                        English
+                    </a>
+                </li>
+
+
+            </ul>
+          </li>
+
+
+
+
+
+
+
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ url('design/adminlte') }}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">{{ admin()->user()->name }}</span>
+              <span class="hidden-xs">{{ admin()->user()->name  }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -239,9 +269,25 @@
               </li>
             </ul>
           </li>
+
+
           <!-- Control Sidebar Toggle Button -->
+
+
+
+
+
           <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
         </ul>
       </div>
+
+
+
+
+
+
+
+
+
