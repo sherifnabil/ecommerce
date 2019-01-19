@@ -11,10 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+
+Route::group(['middleware' => 'Maintenance'], function() {
+
+    Route::get('/', function () {
+        return view('style.home');
+    });
+
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('maintenance', function () {
+    if(setting()->status == 'open'):
+        return redirect('/');
+    else:
+        return $next($request);
+    endif;
+    return view('style.maintenance');
+});

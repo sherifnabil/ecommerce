@@ -52,10 +52,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
+        \Config::set('filesystems.disks.public.url', url('storage'));
         Route::middleware('Lang');
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
+
     }
 
 

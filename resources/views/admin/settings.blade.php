@@ -22,11 +22,18 @@
     </div>
     <div class="form-group">
       {!! Form::label('logo',trans('admin.logo')) !!}
-      {!! Form::file('logo', setting()->logo, ['class' => 'form-control']) !!}
+      {!! Form::file('logo', ['class' => 'form-control']) !!}
+
+      @if(setting()->logo)
+        <img src="{{ Storage::url(setting()->logo) }}" style="height:100px; width:100px" />
+      @endif
     </div>
     <div class="form-group">
       {!! Form::label('icon',trans('admin.icon')) !!}
-      {!! Form::file('icon', setting()->icon, ['class' => 'form-control']) !!}
+      {!! Form::file('icon', ['class' => 'form-control']) !!}
+      @if(setting()->icon)
+        <img src="{{ Storage::url(setting()->icon) }}" style="height:100px; width:100px" />
+      @endif
     </div>
     <div class="form-group">
       {!! Form::label('description',trans('admin.description')) !!}
