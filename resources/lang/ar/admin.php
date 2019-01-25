@@ -1,6 +1,6 @@
 <?php
 return [
-	'login'                        => 'تسجيل دخول',
+    'login'                        => 'تسجيل دخول',
 	'adminpanel'                   => 'لوحة التحكم',
 	'users'                        => ' الاعضاء',
 	'inccorrect_information_login' => 'البريد الالكترونى او كلمة المرور غير صحيحة من فضلك اعد المحاولة',
@@ -22,7 +22,70 @@ return [
     'vendor'                       => 'متجر',
     'company'                      => 'شركة ',
     'level'                        => 'مستوي العضوية',
+    'countries'                    => ' الدول',
 
+    'create_countries'             => ' اضافة دولة جديدة',
+    'country_name_en'              => ' اسم الدولة باللغة الانجليزية',
+    'country_name_ar'              => ' اسم الدولة باللغة العربية',
+    'country_flag'                 => 'علم الدولة',
+    'code'                         => 'كود الدولة',
+    'mob'                          => 'اختصار/رمز الدولة',
+
+    'city_name_en'                 => ' اسم المدينة باللغة الانجليزية',
+    'city_name_ar'                 => ' اسم المدينة باللغة العربية',
+    'country_id'                   => ' الدولة',
+    'create_cities'                => ' اضافة مدينة جديدة',
+    'cities'                       => 'المدن ',
+
+
+    'state_name_en'                => ' اسم الحي باللغة الانجليزية',
+    'state_name_ar'                => ' اسم الحي باللغة العربية',
+    'city_id'                      => ' المدينة',
+    'create_states'                => ' اضافة حي جديد',
+    'states'                       => 'الاحياء ',
+    'country_id'                   => ' الدولة',
+
+    'department_name_en'           => ' اسم القسم باللغة الانجليزية',
+    'department_name_ar'           => ' اسم القسم باللغة العربية',
+    'department_id'                => ' فرعي من',
+    'create_dapartments'           => ' اضافة قسم جديد',
+    'dapartments'                  => 'الاقسام',
+	'descriptionn'                 => 'الوصف',
+	'departments'                  => 'الاقسام',
+    'dep_name_en'                  => ' اسم القسم باللغة الانجليزية',
+    'dep_name_ar'                  => ' اسم القسم باللغة العربية',
+	'keyword'                      => 'الكلمات الدليلية',
+    'dep_flag'                     => ' الرمز',
+    'parent'                       => ' فرعي من',
+	'descriptionn'                 => 'وصف القسم',
+    'ask_delete_dep'               => ' هل انت موافق علي حذف القسم التالي  ',
+
+
+
+    'trademark'                    => 'العلامات التجارية',
+    'name_en'                      => ' الاسم بالانجليزية',
+    'name_ar'                      => ' الاسم بالعربية',
+    'create_trademark'             => ' اضافة علامة تجارية',
+    'logoo'                        => 'شعار العلامة التجارية',
+
+
+
+    'manufactures'                 => 'المصنعين ',
+    'facebook'                     => 'فيسبوك ',
+    'twitter'                      => 'تويتر ',
+    'website'                      => 'الموقع الرسمى  ',
+    'contact_name'                 => 'المسئول عن المصنع ',
+    'mobile'                       => 'الجوال ',
+    'lat'                          => 'المصنعين ',
+    'lng'                          => 'المصنعين ',
+    'create_manufactures'          => ' مصنع جديد  ',
+    'menu_icon'                    => ' شعار المصنع',
+    'address'                      => ' العنوان ',
+
+
+    'shipping'                     => ' شركات الشحن ',
+    'ship_icon'                    => ' شعار الشركة  ',
+    'owner_id'                     => ' المالك  ',
 
     'ar'                           => 'عربى',
 	'en'                           => 'انجليزى ',

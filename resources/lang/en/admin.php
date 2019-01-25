@@ -16,7 +16,27 @@ return [
     'users'                          => 'Users Panel',
     'admins'                         => 'Admin Panel',
 	'add'                            => 'Add',
+    'countries'                      => 'Countries',
 
+    'create_countries'               => 'Add Country',
+    'country_name_en'                => 'Country in English',
+    'country_name_ar'                => 'Country in Arabic',
+    'country_flag'                   => 'Country Flag ',
+    'code'                           => 'Country Code ',
+    'mob'                            => 'Country Mobile ',
+
+    'state_name_en'                  => 'State in English',
+    'state_name_ar'                  => 'State in Arabic',
+    'city_id'                        => ' City',
+    'create_states'                  => 'New State',
+    'states'                         => 'States',
+
+
+    'city_name_en'                   => 'City in English',
+    'city_name_ar'                   => 'City in Arabic',
+    'country_id'                     => 'Country',
+    'create_cities'                  => 'Add City',
+    'cities'                         => 'Cities ',
 
     'user'                           => 'User',
     'level'                          => 'Level',

@@ -30,9 +30,31 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::get('settings', 'Settings@setting');
         Route::post('settings', 'Settings@setting_save');
 
+        Route::resource('countries', 'CountriesController');
+        Route::delete('countries/destroy/all', 'CountriesController@multi_delete');
 
+        Route::resource('departments', 'DepartmentsController');
+
+
+        Route::resource('cities', 'CitiesController');
+        Route::delete('cities/destroy/all', 'CitiesController@multi_delete');
+
+        Route::resource('states', 'StatesController');
+        Route::delete('states/destroy/all', 'StatesController@multi_delete');
+
+        Route::resource('trademarks', 'TrademarksController');
+        Route::delete('trademarks/destroy/all', 'TrademarksController@multi_delete');
+
+
+        Route::resource('manufactures', 'ManufacturesController');
+        Route::delete('manufactures/destroy/all', 'ManufacturesController@multi_delete');
+
+        Route::resource('shippings', 'ShippingsController');
+        Route::delete('shippings/destroy/all', 'ShippingsController@multi_delete');
 
         Route::any('logout', ['uses' => 'AdminAuth@logout']);
+
+
     });
 
     Route::get('lang/{lang}', function($lang) {

@@ -19,6 +19,59 @@ if(!function_exists('up'))
 }
 
 
+if(!function_exists('load_dep'))
+{
+    function load_dep($select = null, $dep_hide = null)
+    {
+        $departments = \App\model\Department::selectRaw('dep_name_' . session('lang') . ' as text')
+                        ->selectRaw('id as id')
+                        ->selectRaw('parent as parent')
+                        ->get(['text', 'parent', 'id']);
+
+                        $dep_arr = [];
+                        foreach($departments as $department){
+                            $list_arr             = [];
+                            $list_arr['icon']     = '';
+                            $list_arr['li_attr']  = '';
+                            $list_arr['a_attr']   = '';
+                            $list_arr['children'] = [];
+
+                            if($select !== null and $select == $department->id){
+                                $list_arr['icon'] = '';
+                                $list_arr['li_attr'] = '';
+                                $list_arr['a_attr'] = '';
+                                $list_arr['children'] = '';
+                                $list_arr['state'] = [
+                                    'opened'   => true,
+                                    'selected' => true,
+                                    'disabled' => false,
+                                    'hidden'   => false,
+                                ];
+                            }
+
+                            if($dep_hide !== null and $dep_hide == $department->id){
+                                $list_arr['icon'] = '';
+                                $list_arr['li_attr'] = '';
+                                $list_arr['a_attr'] = '';
+                                $list_arr['children'] = '';
+                                $list_arr['state'] = [
+                                    'opened'   => false,
+                                    'selected' => false,
+                                    'disabled' => true,
+                                ];
+                            }
+                            $list_arr['id'] = $department->id;
+                            $list_arr['parent'] = $department->parent > 0 ? $department->parent : '#';
+                            $list_arr['text'] = $department->text;
+                            array_push($dep_arr, $list_arr);
+
+                        }
+                    return json_encode($dep_arr, JSON_UNESCAPED_UNICODE);
+
+    }
+}
+
+
 if(!function_exists('admin'))
 {
     function admin()
@@ -48,6 +101,7 @@ if(!function_exists('lang'))
         {
             return session('lang');
         }else{
+            session()->put('lang', setting()->main_lang);
             return setting()->main_lang;
         }
     }
