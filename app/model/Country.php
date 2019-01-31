@@ -13,6 +13,7 @@ class Country extends Model
         'mob',
         'code',
         'logo',
+        'currency',
     ];
 
 

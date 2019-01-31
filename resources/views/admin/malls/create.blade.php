@@ -22,7 +22,8 @@
             longitudeInput: $('#lng'),
             // radiusInput: $('#us2-radius'),
             locationNameInput: $('#address')
-        }
+        },
+        enableAutocomplete: true
 
     });
 </script>
@@ -32,7 +33,7 @@
               <h3 class="box-title">{{ $title }}</h3>
             </div>
             <div class="box-body">
-            {!! Form::open(['url'   =>  aurl('manufactures'), 'files' => true]) !!}
+            {!! Form::open(['url'   =>  aurl('malls'), 'files' => true]) !!}
                 <input type="hidden" value="{{ $lat}}" id="lat" name="lat"/>
                 <input type="hidden" value="{{ $lng }}" id="lng" name="lng"/>
                 <div class="form-group">
@@ -44,6 +45,19 @@
                     {!! Form::label('name_en', trans('admin.name_en')) !!}
                     {!! Form::text('name_en', old('name_en'), ['class' => 'form-control']) !!}
 
+                </div>
+                <div class="form-group">
+                    {!! Form::label('country_id', trans('admin.country_id')) !!}
+                    {!! Form::select('country_id', App\model\Country::pluck('country_name_' . session('lang'), 'id'),  old('city_name_en') ,['class' => 'form-control', 'placeholder' => '........................']) !!}
+
+                </div>
+                <div class="form-group">
+                    {!! Form::label('address', trans('admin.address')) !!}
+                    {!! Form::text('address', old('address'), ['class' => 'form-control address']) !!}
+
+                </div>
+                <div class="form-group">
+                    <div id="us1" style="width:100% ; height: 400px;"></div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('contact_name', trans('admin.contact_name')) !!}
@@ -71,24 +85,15 @@
 
                 </div>
 
-                <div class="form-group">
-                    {!! Form::label('address', trans('admin.address')) !!}
-                    {!! Form::text('address', old('address'), ['class' => 'form-control address']) !!}
-
-                </div>
-
-                <div class="form-group">
-                    <div id="us1" style="width:100% ; height: 400px;"></div>
-                </div>
 
                 <div class="form-group">
                     {!! Form::label('email', trans('admin.email')) !!}
                     {!! Form::text('email', old('email'), ['class' => 'form-control']) !!}
 
-                </div>
+               </div>
 
                 <div class="form-group">
-                    {!! Form::label('logo', trans('admin.menu_icon')) !!}
+                    {!! Form::label('logo', trans('admin.mall_icon')) !!}
                     {!! Form::file('logo', ['class' => 'form-control']) !!}
 
                 </div>

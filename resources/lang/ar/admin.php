@@ -44,6 +44,7 @@ return [
     'create_states'                => ' اضافة حي جديد',
     'states'                       => 'الاحياء ',
     'country_id'                   => ' الدولة',
+    'currency'                     => ' العمله',
 
     'department_name_en'           => ' اسم القسم باللغة الانجليزية',
     'department_name_ar'           => ' اسم القسم باللغة العربية',
@@ -52,6 +53,7 @@ return [
     'dapartments'                  => 'الاقسام',
 	'descriptionn'                 => 'الوصف',
 	'departments'                  => 'الاقسام',
+	'department'                   => 'القسم',
     'dep_name_en'                  => ' اسم القسم باللغة الانجليزية',
     'dep_name_ar'                  => ' اسم القسم باللغة العربية',
 	'keyword'                      => 'الكلمات الدليلية',
@@ -102,8 +104,52 @@ return [
 	'message_maintenance'          => 'رسالة الصيانة',
 
 
+    'malls'                        => 'المجمعات التجارية',
+    'create_malls'                 => 'اضافة',
+    'mall_icon'                    => ' شعار المول',
+    'colors'                       => 'الالوان',
+    'color'                        => 'اللون',
+    'create_colors'                => 'الالوان',
+
+
+    'sizes'                        => 'المقاسات',
+    'create_sizes'                 => 'المقاسات',
+
+
+
+
+    'products'                     => 'المنتجات',
+    'weights'                      => 'الاحجام',
+    'product_name_en'              => 'اسم المنتج بالانجليزي',
+    'product_name_ar'              => 'اسم المنتج بالعربية',
+    'create_products'              => 'اضافة منتجات',
+    'product_flag'                 => 'رمز المنتج',
+
+    'create_weights'               => 'اضافة اوزان',
+    'product_info'                 => 'معلومات المنتج ',
+    'product_setting'              => ' اعدادات المنتج',
+    'product_media'                => 'وسائط المنتج ',
+    'product_size_weight'          => ' الوزن والحجم',
+    'other_data'                   => 'معلومات إضافية',
+    'save_and_continue'            => 'حفظ واستمرار',
+    'copy_product'                 => 'نسخ المنتج',
+
+    'create_or_edit_product'       => 'اضافة او تعديل المنتج:title',
+    'product_title'                => 'عنوان المنتج',
+    'content'                      => 'تفاصيل المنتج',
+    'price'                        => 'السعر ',
+    'stock'                        => ' الكمية ',
+    'start_at'                     => ' يبدا في ',
+    'end_at'                       => ' ينتهي في ',
+    'price_offer'                  => ' سعر العرض ',
+    'start_offer_at'               => ' العرض يبدا في ',
+    'end_offer_at'                 => 'العرض ينتهي في ',
+
+
     'user_email'                   => 'بريد المستخدم',
     'user_name'                    => 'اسم المستخدم',
+    'yess'                         => 'نعم',
+    'is_public'                    => 'مقاس عام',
 
     'created_at'                   => 'تم الاضافة ',
     'updated_at'                   => 'تم التعديل',
@@ -121,7 +167,6 @@ return [
     'record_deleted'               => 'تم الحذف بنجاح ',
     'delete_this'                  => 'هل انت موافق علي حذف  :name ؟',
     'save'                         => 'حفظ',
-
 
 
 

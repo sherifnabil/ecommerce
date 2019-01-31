@@ -52,6 +52,22 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::resource('shippings', 'ShippingsController');
         Route::delete('shippings/destroy/all', 'ShippingsController@multi_delete');
 
+        Route::resource('malls', 'MallsController');
+        Route::delete('malls/destroy/all', 'MallsController@multi_delete');
+
+
+        Route::resource('colors', 'ColorsController');
+        Route::delete('colors/destroy/all', 'ColorsController@multi_delete');
+
+        Route::resource('sizes', 'SizesController');
+        Route::delete('sizes/destroy/all', 'SizesController@multi_delete');
+
+        Route::resource('products', 'ProductsController');
+        Route::delete('products/destroy/all', 'ProductsController@multi_delete');
+
+        Route::resource('weights', 'WeightsController');
+        Route::delete('weights/destroy/all', 'WeightsController@multi_delete');
+
         Route::any('logout', ['uses' => 'AdminAuth@logout']);
 
 

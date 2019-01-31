@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCountriesTable extends Migration
+class CreateWeightsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateCountriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('weights', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('country_name_ar');
-            $table->string('country_name_en');
-            $table->string('mob');
-            $table->string('code');
-            $table->string('currency');
-            $table->string('logo')->nullable();
+            $table->string('name_ar');
+            $table->string('name_en');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('weights');
     }
 }

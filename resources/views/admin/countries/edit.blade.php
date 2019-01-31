@@ -23,6 +23,11 @@
 
                 </div>
                 <div class="form-group">
+                    {!! Form::label('currency', trans('admin.currency')) !!}
+                    {!! Form::text('currency',  $country->mob, ['class' => 'form-control']) !!}
+
+                </div>
+                <div class="form-group">
                     {!! Form::label('code', trans('admin.code')) !!}
                     {!! Form::text('code', $country->code, ['class' => 'form-control']) !!}
 
