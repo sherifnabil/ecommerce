@@ -71,6 +71,24 @@ if(!function_exists('load_dep'))
     }
 }
 
+if(!function_exists('get_parent'))
+{
+    function get_parent($dep_id)
+    {
+        // $dep_arr = [];
+
+        $department = \App\model\Department::find($dep_id);
+        if($department->parent !== null && $department->parent > 0)
+        {
+            return get_parent($department->parent) . "." . $dep_id;
+        }else{
+            return $dep_id;
+        }
+
+
+    }
+}
+
 
 if(!function_exists('admin'))
 {

@@ -26,7 +26,7 @@
                 <li class="active"><a data-toggle="tab" href="#product_info">{{ trans('admin.product_info') }} <i class="fa fa-info"></i></a></li>
                 <li><a data-toggle="tab" href="#product_setting">{{ trans('admin.product_setting') }} <i class="fa fa-list"></i></a></li>
                 <li><a data-toggle="tab" href="#department">{{ trans('admin.department') }} <i class="fa fa-cog"></i></a></li>
-                2<li><a data-toggle="tab" href="#product_media">{{ trans('admin.product_media') }} <i class="fa fa-photo"></i></a></li>
+                 <li><a data-toggle="tab" href="#product_media">{{ trans('admin.product_media') }} <i class="fa fa-photo"></i></a></li>
                 <li><a data-toggle="tab" href="#product_size_weight">{{ trans('admin.product_size_weight') }} <i class="fa fa-info-circle"></i></a></li>
                 <li><a data-toggle="tab" href="#other_data">{{ trans('admin.other_data') }} <i class="fa fa-database"></i></a></li>
             </ul>

@@ -124,6 +124,8 @@ return [
     'product_name_ar'              => 'اسم المنتج بالعربية',
     'create_products'              => 'اضافة منتجات',
     'product_flag'                 => 'رمز المنتج',
+    'mainphoto'                    => 'الصورة الرئيسية للمنتج',
+    'other_files'                  => 'صور او فيديوهات او ملفات اخري للمنتج  ',
 
     'create_weights'               => 'اضافة اوزان',
     'product_info'                 => 'معلومات المنتج ',
@@ -133,6 +135,10 @@ return [
     'other_data'                   => 'معلومات إضافية',
     'save_and_continue'            => 'حفظ واستمرار',
     'copy_product'                 => 'نسخ المنتج',
+    'size_id'                      => 'no3 alm2as',
+    'size'                         => ' alm2as',
+    'weight'                       => ' al7agm',
+    'weight_id'                    => 'no3 al7agm',
 
     'create_or_edit_product'       => 'اضافة او تعديل المنتج:title',
     'product_title'                => 'عنوان المنتج',
@@ -142,9 +148,13 @@ return [
     'start_at'                     => ' يبدا في ',
     'end_at'                       => ' ينتهي في ',
     'price_offer'                  => ' سعر العرض ',
-    'start_offer_at'               => ' العرض يبدا في ',
-    'end_offer_at'                 => 'العرض ينتهي في ',
+    'start_offer_at'               => 'تاريخ بداية العرض الخاص',
+    'end_offer_at'                 => 'تاريخ نهاية العرض الخاص',
+    'refused_reason'               => 'سبب الرفض',
 
+    'pending'                      => 'بالانتظار',
+    'refused'                      => 'مرفوض',
+    'active'                       => 'مفعل ',
 
     'user_email'                   => 'بريد المستخدم',
     'user_name'                    => 'اسم المستخدم',

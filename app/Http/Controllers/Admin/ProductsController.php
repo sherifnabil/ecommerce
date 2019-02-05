@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\DataTables\ProductsDataTable;
 use App\model\Product;
+use App\model\Size;
+use App\model\Weight;
 use Illuminate\Http\Request;
 use Storage;
 
@@ -23,6 +25,22 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function prepare_weight_size()
+    {
+        if(request()->ajax() and request()->has('dep_id') ){
+            $dep_list = array_diff(explode(',', get_parent(request('dep_id'))), [request('dep_id')]);
+            $size_1 = Size::where('is_public', 'yes')->whereIn('department_id', $dep_list)->pluck('name_' . session('lang'), 'id');
+            $size_2 = Size::whereIn('department_id', request('dep_id'))->pluck('name_' . session('lang'), 'id');
+            $sizes = array_merge(json_decode($size_1, true), json_decode($size_2, true));
+            $weights = Weight::pluck('name_'. session('lang', 'id'));
+            return view('admin.products.ajax.size_weight', ['sizes' => $sizes, 'weights' => $weights])->render();
+        }else{
+            return 'برجاء اختيار القسم';
+        }
+    }
+
+
+
     public function create()
     {
         $product = Product::create([
@@ -35,6 +53,31 @@ class ProductsController extends Controller
         }
     }
 
+
+
+
+    public function delete_main_image($id)
+    {
+        $product = Product::find($id);
+        Storage::delete( $product->photo);
+        $product->photo = null;
+        $product->save();
+        return response(['status' => true, ], 200);
+    }
+
+    public function update_product_image($id)
+    {
+
+        $product = Product::where('id', $id)->update([
+            'photo' => up()->upload([
+                'file'          =>  'file',
+                'path'          =>  'products/' . $id,
+                'upload_type'   =>  'single',
+                'delete_file'   =>  '',
+            ]),
+        ]);
+        return response(['status' => true, ], 200);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -97,6 +140,38 @@ class ProductsController extends Controller
         return view('admin.products.product', ['title' => trans('admin.create_or_edit_product', ['title' => $product->title]), 'product' => $product]);
 
     }
+
+
+
+
+    public function upload_file($id)
+    {
+        if(request()->hasFile('file')){
+           $fid = up()->upload([
+                    'file'          =>  'file',
+                    'path'          =>  'products/' . $id,
+                    'upload_type'   =>  'files',
+                    'file_type'     =>  'product',
+                    'relation_id'   =>   $id,
+                    'delete_file'   =>   '',
+            ]);
+            return response(['status' => true, 'id' => $fid], 200);
+        }
+
+    }
+
+
+
+
+    public function delete_file()
+    {
+        if(request()->has('id')){
+            up()->delete(request('id'));
+
+        }
+
+    }
+
 
     /**
      * Update the specified resource in storage.
@@ -174,4 +249,5 @@ class ProductsController extends Controller
         session()->flash('success', trans('admin.record_deleted'));
         return redirect(aurl('products'));
     }
+
 }

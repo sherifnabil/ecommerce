@@ -30,4 +30,8 @@ class Product extends Model
         'status',
         'reason',
     ];
+    public function files()
+    {
+        return $this->hasMany('App\File', 'relation_id', 'id')->where('file_type', 'product');
+    }
 }
