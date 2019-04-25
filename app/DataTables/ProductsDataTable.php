@@ -18,7 +18,7 @@ class ProductsDataTable extends DataTable
         return datatables($query)
             ->addColumn('checkbox', 'admin.products.btn.checkbox')
             ->addColumn('edit', 'admin.products.btn.edit')
-            ->addColumn('color', 'admin.products.btn.color')
+            // ->addColumn('color', 'admin.products.btn.color')
             ->rawColumns([
                 'edit',
                 'delete',

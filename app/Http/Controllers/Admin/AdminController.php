@@ -48,7 +48,7 @@ class AdminController extends Controller
             'password'  =>    trans('admin.password'),
         ]);
 
-        $data['passord'] = bcrypt(request('password'));
+        $data['password'] = bcrypt(request('password'));
         Admin::create($data);
         session()->flash('success', trans('admin.record_added'));
         return redirect(aurl('admin'));

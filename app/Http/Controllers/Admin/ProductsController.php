@@ -18,6 +18,8 @@ class ProductsController extends Controller
      */
     public function index(ProductsDataTable $product)
     {
+        return $product->render( 'admin.products.index', ['title' => trans('admin.products')]);
+        
     }
 
     /**

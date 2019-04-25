@@ -1,5 +1,5 @@
 
-<button type="button" class="btn btn-danger btn-danger" data-toggle="modal" data-target="#del_admin{{ $id }}">
+<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#del_admin{{ $id }}">
     <i class="fa fa-trash"></i>
 
 </button>
