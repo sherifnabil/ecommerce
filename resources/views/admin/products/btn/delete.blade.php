@@ -16,7 +16,8 @@
       </div>
       {!! Form::open(['route' => ['products.destroy', $id], 'method' => 'delete']) !!}
         <div class="modal-body">
-            <h4>{{ trans('admin.delete_this', ['name' => session('lang') == 'ar' ? $country_name_ar : $country_name_en ]) }}</h4>
+         {{-- depuging the product --}}
+            {{-- <h4>{{ trans('admin.delete_this', ['name' => session('lang') == 'ar' ? $country_name_ar : $country_name_en ]) }}</h4> --}}
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-info" data-dismiss="modal">{{ trans('admin.close') }}</button>
